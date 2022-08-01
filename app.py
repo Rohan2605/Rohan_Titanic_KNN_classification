@@ -27,7 +27,7 @@ def predict():
       sex = 0
     
     sc = MinMaxScaler()
-    prediction = model.predict(sc.transform([[Pclass, Sex, Age, Sibsp, Parch, Fare]]))
+    prediction = model.predict(sc.transform([[pclass, sex, age, sibsp, parch, fare]]))
     
     if prediction == [0]:
       return render_template('index.html', prediction_text='Sorry, the person you are searching for is no more')
