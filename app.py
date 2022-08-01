@@ -1,6 +1,5 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-from sklearn.preprocessing import MinMaxScaler
 import pickle
 
 
@@ -26,7 +25,6 @@ def predict():
     else:
       sex = 0
     
-    sc = MinMaxScaler()
     prediction = model.predict(sc.transform([[pclass, sex, age, sibsp, parch, fare]]))
     
     if prediction == [0]:
