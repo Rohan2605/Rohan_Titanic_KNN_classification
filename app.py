@@ -4,7 +4,7 @@ import pickle
 
 
 app = Flask(__name__)
-model = pickle.load(open('KNN_classification_Titanic.pkl','rb')
+model = pickle.load(open('KNN_classification_Titanic.pkl','rb'))
 @app.route('/')
 def home():
   
