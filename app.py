@@ -25,6 +25,7 @@ def predict():
     else:
       sex = 0
     
+    sc = MinMaxScaler()
     prediction = model.predict(sc.transform([[Pclass, Sex, Age, Sibsp, Parch, Fare]]))
     
     if prediction == [0]:
