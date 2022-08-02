@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify, render_template
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
 import pickle
 
 
@@ -30,7 +30,7 @@ def predict():
       
     x = dataset.iloc[:, [2,4,5,6,7,9]].values
     
-    sc = StandardScaler()
+    sc = MinMaxScaler()
     x = sc.fit_transform(x)
     prediction = model.predict(sc.transform([[pclass, sex, age, sibsp, parch, fare]]))
     
