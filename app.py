@@ -6,6 +6,7 @@ import pickle
 
 app = Flask(__name__)
 model = pickle.load(open('KNN_classification_Titanic.pkl','rb'))
+dataset= pd.read_csv('train.csv')
 @app.route('/')
 def home():
   
