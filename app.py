@@ -27,7 +27,7 @@ def predict():
     else:
       sex = 0
      
-    prediction = model.predict(sc.transform([[pclass, sex, age, sibsp, parch, fare]]))
+    prediction = model.predict([[pclass, sex, age, sibsp, parch, fare]])
     
     if prediction == [0]:
       return render_template('index.html', prediction_text='Sorry, the person you are searching for is no more')
